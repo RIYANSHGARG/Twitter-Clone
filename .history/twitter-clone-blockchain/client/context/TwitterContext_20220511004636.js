@@ -26,7 +26,7 @@ export const TwitterProvider= ({children}) => {
           if (addressArray.length > 0) {
             setAppStatus('connected')
             setCurrentAccount(addressArray[0])
-            createUserAccount(addressArray[0])
+            // createUserAccount(addressArray[0])
           } else {
             router.push('/')
             setAppStatus('notConnected')
@@ -51,7 +51,7 @@ export const TwitterProvider= ({children}) => {
 
       if (addressArray.length > 0) {
         setCurrentAccount(addressArray[0])
-        createUserAccount(addressArray[0])
+        // createUserAccount(addressArray[0])
       } else {
         router.push('/')
         setAppStatus('notConnected')
@@ -86,7 +86,7 @@ export const TwitterProvider= ({children}) => {
 
     } catch (error) {
       router.push('/')
-      setAppStatus('connected')
+      setAppStatus('error')
     }
   }
 

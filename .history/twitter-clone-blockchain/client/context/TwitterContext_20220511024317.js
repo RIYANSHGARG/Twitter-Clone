@@ -86,7 +86,7 @@ export const TwitterProvider= ({children}) => {
 
     } catch (error) {
       router.push('/')
-      setAppStatus('connected')
+      setAppStatus('error')
     }
   }
 
