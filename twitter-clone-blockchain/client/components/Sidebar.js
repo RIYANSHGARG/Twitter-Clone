@@ -1,5 +1,5 @@
 import Link from 'next/link'
-// import { useRouter } from 'next/router'
+import { useRouter } from 'next/router'
 
 import {FiMoreHorizontal} from 'react-icons/fi'
 import {VscTwitter} from 'react-icons/vsc'
@@ -12,6 +12,9 @@ import {BiHash} from 'react-icons/bi'
 import {FiBell} from 'react-icons/fi'
 import {HiOutlineMail , HiMail} from 'react-icons/hi'
 import {FaRegListAlt, FaHashtag, FaBell} from 'react-icons/fa'
+import ProfileImageMinter from '../components/mintingModal/ProfileImageMinter'
+import Modal from 'react-modal'
+import { customStyles } from '../lib/costants'
 import {CgMore} from 'react-icons/cg'
 import {
     BsBookmark,
@@ -38,6 +41,7 @@ const style = {
 
 function Sidebar({initialSelectedIcon = 'Home'}) {
     const [selected, setSelected] = useState(initialSelectedIcon)
+    const router = useRouter()
     return (
         <div className={style.wrapper}>
             <div className={style.twitterIconContainer}>
@@ -82,7 +86,9 @@ function Sidebar({initialSelectedIcon = 'Home'}) {
                     redirect={'/profile'}
                 />
                 <SidebarOption Icon={CgMore} text="More" setSelected={setSelected}/>
-                <div className={style.tweetButton}>Mint</div>
+                <div
+                    onClick={()=> router.push(`${router.pathname}/?mint=${0x365d7d9DC23B23A8c45b647B88B139590BEaB99c}`)} 
+                    className={style.tweetButton}>Mint</div>
             </div>
             <div className={style.profileButton}>
                 <div className={style.profileLeft}></div>
@@ -96,6 +102,13 @@ function Sidebar({initialSelectedIcon = 'Home'}) {
                     </div>
                 </div>
             </div>
+            <Modal
+                isOpen={Boolean(router.query.mint)}
+                onRequestClose={() => router.back()}
+                style={customStyles}
+            >
+                <ProfileImageMinter />
+            </Modal>
         </div>
     )
 

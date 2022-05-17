@@ -73,7 +73,7 @@ export const TwitterProvider= ({children}) => {
       const userDoc = {
         _type: 'users',
         _id: userAddress,
-        name: 'Unnamed',
+        name: 'Riyansh Garg',
         isProfileImageNft: false,
         profileImage:
           'https://about.twitter.com/content/dam/about-twitter/en/brand-toolkit/brand-download-img-1.jpg.twimg.1920.jpg',
