@@ -31,8 +31,8 @@ function ProfileHeader() {
                 <BsArrowLeftShort />
             </div>
             <div className={style.details}>
-                <div className={style.primary}>Madhav Bansal</div>
-                <div className={style.secondary}>4 tweets</div>
+                <div className={style.primary}>Riyansh Garg</div>
+                <div className={style.secondary}>1 tweets</div>
             </div>
         </div>
         <div className={style.coverPhotoContainer}>

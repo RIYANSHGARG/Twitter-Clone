@@ -8,28 +8,12 @@ const style = {
 }
 
 const tweets = [{
-    displayName : 'Riyansh',
+    displayName : 'Riyansh Garg',
     userName: '0x365d7d9DC23B23A8c45b647B88B139590BEaB99c',
-    avatar:'https://i.imgur.com/LlyiSz3.png',
-    text:'gm',
-    isProfileImageNft: false,
-    timestamp:'2022-03-19T12:00:00.000Z'
-},
-{
-    displayName : 'Riyansh',
-    userName: '0x365d7d9DC23B23A8c45b647B88B139590BEaB99c',
-    avatar:'https://i.imgur.com/LlyiSz3.png',
-    text:'gm',
-    isProfileImageNft: false,
-    timestamp:'2022-03-19T12:00:00.000Z'
-},
-{
-    displayName : 'Riyansh',
-    userName: '0x365d7d9DC23B23A8c45b647B88B139590BEaB99c',
-    avatar:'https://i.imgur.com/LlyiSz3.png',
-    text:'gm',
-    isProfileImageNft: false,
-    timestamp:'2022-03-19T12:00:00.000Z'
+    avatar:'https://i.imgur.com/79okfjG.png',
+    text:'Education is the passport to the future, for tomorrow belongs to those who prepare for it today.',
+    isProfileImageNft: true,
+    timestamp:'2022-05-15T12:00:00.000Z'
 }]
 
 

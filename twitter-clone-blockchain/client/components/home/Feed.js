@@ -11,26 +11,34 @@ const style = {
 }
 
 const tweets = [{
-    displayName : 'Riyansh',
+    displayName : 'Riyansh garg',
     userName: '0x365d7d9DC23B23A8c45b647B88B139590BEaB99c',
-    avatar:'https://i.imgur.com/LlyiSz3.png',
-    text:'gm',
-    isProfileImageNft: false,
-    timestamp:'2022-03-19T12:00:00.000Z'
+    avatar:'https://i.imgur.com/79okfjG.png',
+    text:'Education is the passport to the future, for tomorrow belongs to those who prepare for it today.',
+    isProfileImageNft: true,
+    timestamp:'2022-05-15T12:00:00.000Z'
 },
 {
-    displayName : 'Riyansh',
+    displayName : 'Sheshans Kumar',
     userName: '0x365d7d9DC23B23A8c45b647B88B139590BEaB99c',
     avatar:'https://i.imgur.com/LlyiSz3.png',
-    text:'gm',
+    text:'Leadership is the capacity to translate vision into reality.',
     isProfileImageNft: false,
-    timestamp:'2022-03-19T12:00:00.000Z'
+    timestamp:'2022-05-10T12:00:00.000Z'
 },
 {
-    displayName : 'Riyansh',
+    displayName : 'Shiwani Singhal',
     userName: '0x365d7d9DC23B23A8c45b647B88B139590BEaB99c',
-    avatar:'https://i.imgur.com/LlyiSz3.png',
-    text:'gm',
+    avatar:'https://i.imgur.com/zTimfPh.jpg',
+    text:'We cannot all succeed when half of us are held back.',
+    isProfileImageNft: false,
+    timestamp:'2022-04-25T12:00:00.000Z'
+},
+{
+    displayName : 'Karan Sarawagi',
+    userName: '0x365d7d9DC23B23A8c45b647B88B139590BEaB99c',
+    avatar:'https://i.imgur.com/79okfjG.png',
+    text:'The way to become rich is to make money, not to save it.',
     isProfileImageNft: false,
     timestamp:'2022-03-19T12:00:00.000Z'
 }]

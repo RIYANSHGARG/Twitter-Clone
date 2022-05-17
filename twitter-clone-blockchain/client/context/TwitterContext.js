@@ -66,11 +66,11 @@ export const TwitterProvider= ({children}) => {
    * @param {String} userAddress Wallet address of the currently logged in user
    */
 
-  const createUserAccount = async(userAddress = currentAccount) =>{
+
+   const createUserAccount = async (userAddress = currentAccount) => {
     if (!window.ethereum) return setAppStatus('noMetaMask')
     try {
       const userDoc = {
-
         _type: 'users',
         _id: userAddress,
         name: 'Unnamed',
@@ -83,10 +83,10 @@ export const TwitterProvider= ({children}) => {
       await client.createIfNotExists(userDoc)
 
       setAppStatus('connected')
-
     } catch (error) {
       router.push('/')
-      setAppStatus('error')
+      console.log(error)
+      setAppStatus('connected')
     }
   }
 
