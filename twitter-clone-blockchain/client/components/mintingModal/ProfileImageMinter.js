@@ -1,4 +1,4 @@
-import { useRouter  } from 'next/router'
+import { useRouter } from 'next/router'
 import React from 'react'
 import { useState, useContext } from 'react'
 import InitialState from './InitialState'
@@ -13,12 +13,13 @@ const ProfileImageMinter = () => {
   const [status, setStatus] = useState('initial')
   const [profileImage, setProfileImage] = useState()
 
-  const mint = async() =>{}
+  const mint = async () => {}
 
   const modalChildren = (modalStatus = status) => {
     switch (modalStatus) {
       case 'initial':
-        return <InitialState 
+        return (
+          <InitialState
             profileImage={!profileImage}
             setProfileImage={setProfileImage}
             name={name}
@@ -26,7 +27,8 @@ const ProfileImageMinter = () => {
             description={description}
             setDescription={setDescription}
             mint={mint}
-        />
+          />
+        )
 
       case 'loading':
         return <LoadingState />
@@ -37,13 +39,11 @@ const ProfileImageMinter = () => {
       default:
         router.push('/')
         setStatus('error')
-        break;
+        break
     }
   }
 
-  return (
-    <div>{modalChildren(status)}</div>
-  )
+  return <div>{modalChildren(status)}</div>
 }
 
 export default ProfileImageMinter

@@ -4,40 +4,36 @@ import { client } from '../lib/client'
 
 export const TwitterContext = createContext()
 
-export const TwitterProvider= ({children}) => {
+export const TwitterProvider = ({ children }) => {
+  const [appStatus, setAppStatus] = useState('loading')
+  const [currentAccount, setCurrentAccount] = useState('')
+  const router = useRouter()
 
-    const [appStatus, setAppStatus] = useState('loading')
-    const [currentAccount, setCurrentAccount] = useState('')
-    const router = useRouter()
+  useEffect(() => {
+    checkIfWalletIsConnected()
+  }, [])
 
-
-    useEffect(() => {
-        checkIfWalletIsConnected()
-      }, [])
-
-
-
-    const checkIfWalletIsConnected = async () => {
-        if (!window.ethereum) return setAppStatus('noMetaMask')
-        try {
-          const addressArray = await window.ethereum.request({
-            method: 'eth_accounts',
-          })
-          if (addressArray.length > 0) {
-            setAppStatus('connected')
-            setCurrentAccount(addressArray[0])
-            createUserAccount(addressArray[0])
-          } else {
-            router.push('/')
-            setAppStatus('notConnected')
-          }
-        } catch (err) {
-          router.push('/')
-          setAppStatus('error')
-        }
+  const checkIfWalletIsConnected = async () => {
+    if (!window.ethereum) return setAppStatus('noMetaMask')
+    try {
+      const addressArray = await window.ethereum.request({
+        method: 'eth_accounts',
+      })
+      if (addressArray.length > 0) {
+        setAppStatus('connected')
+        setCurrentAccount(addressArray[0])
+        createUserAccount(addressArray[0])
+      } else {
+        router.push('/')
+        setAppStatus('notConnected')
       }
+    } catch (err) {
+      router.push('/')
+      setAppStatus('error')
+    }
+  }
 
-      /**
+  /**
    * Initiates MetaMask wallet connection
    */
   const connectToWallet = async () => {
@@ -66,8 +62,7 @@ export const TwitterProvider= ({children}) => {
    * @param {String} userAddress Wallet address of the currently logged in user
    */
 
-
-   const createUserAccount = async (userAddress = currentAccount) => {
+  const createUserAccount = async (userAddress = currentAccount) => {
     if (!window.ethereum) return setAppStatus('noMetaMask')
     try {
       const userDoc = {
@@ -90,9 +85,11 @@ export const TwitterProvider= ({children}) => {
     }
   }
 
-    return (
-        <TwitterContext.Provider value = {{appStatus , currentAccount, connectToWallet}}> 
-            {children}
-        </TwitterContext.Provider>
-    )
+  return (
+    <TwitterContext.Provider
+      value={{ appStatus, currentAccount, connectToWallet }}
+    >
+      {children}
+    </TwitterContext.Provider>
+  )
 }
