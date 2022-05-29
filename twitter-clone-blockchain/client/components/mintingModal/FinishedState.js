@@ -14,14 +14,14 @@ const FinishedState = () => {
   const router = useRouter()
   const { getCurrentUserDetails } = useContext(TwitterContext)
 
-//   useEffect(() => {
-//     getCurrentUserDetails()
-//   })
+  //   useEffect(() => {
+  //     getCurrentUserDetails()
+  //   })
 
   return (
     <div className={style.wrapper}>
       <div className={style.title}>Minting Successful!</div>
-      <Image src={checkMark} alt='checkmark' height={100} width={100} />
+      <Image src={checkMark} alt="checkmark" height={100} width={100} />
       <div onClick={() => router.push('/')} className={style.closeButton}>
         Close
       </div>

@@ -1,5 +1,5 @@
 import React from 'react'
-import {news , whoToFollow} from '../lib/static'
+import { news, whoToFollow } from '../lib/static'
 
 import { BiSearch } from 'react-icons/bi'
 
@@ -25,47 +25,58 @@ const style = {
   followButton: `bg-white text-black px-3 py-1 rounded-full text-xs font-bold`,
 }
 
-function Widget(){
+function Widget() {
   return (
     <div className={style.wrapper}>
-        <div className={style.searchBar}>
-            <BiSearch className={style.searchIcon}/>
-            <input type="text" placeholder="search Twitter" className={style.inputBox}/>
-        </div>
-        <div className={style.section}>
-            <div className={style.title}>What's happening ?</div>
-            {news.map((item,index) =>(
-                <div key={index} className={style.item}>
-                    <div className={style.newsItemLeft}>
-                        <div className={style.newsItemCategory}>{item.category}</div>
-                        <div className={style.newsItemTitle}>{item.title}</div>
-                    </div>
-                    <div className={style.newsItemRight}>
-                        <img src={item.image} alt={item.category} className={style.newsItemImage}/>
-                    </div>
-                </div>
-            ))}
-            <div className={style.showMore}>Show More</div>
-        </div>
-        <div className={style.section}>
-            <div className={style.title}>Who to follow</div>
-            {whoToFollow.map((item , index) => (
-                <div key={index} className={style.item}>
-                    <div className={style.followAvatarContainer}>
-                        <img src={item.avatar} alt={item.handle} className={style.followAvatar}/>
-                    </div>
-                    <div className={style.profileDetails}>
-                        <div className={style.name}>{item.name}</div>
-                        <div className={style.handle}>{item.handle}</div>
-                    </div>
-                    <div className={style.followButton}>Follow</div>
-                </div>
-            ))}
-            <div className={style.showMore}>Show more</div>
-        </div>
+      <div className={style.searchBar}>
+        <BiSearch className={style.searchIcon} />
+        <input
+          type="text"
+          placeholder="search Twitter"
+          className={style.inputBox}
+        />
+      </div>
+      <div className={style.section}>
+        <div className={style.title}>What's happening ?</div>
+        {news.map((item, index) => (
+          <div key={index} className={style.item}>
+            <div className={style.newsItemLeft}>
+              <div className={style.newsItemCategory}>{item.category}</div>
+              <div className={style.newsItemTitle}>{item.title}</div>
+            </div>
+            <div className={style.newsItemRight}>
+              <img
+                src={item.image}
+                alt={item.category}
+                className={style.newsItemImage}
+              />
+            </div>
+          </div>
+        ))}
+        <div className={style.showMore}>Show More</div>
+      </div>
+      <div className={style.section}>
+        <div className={style.title}>Who to follow</div>
+        {whoToFollow.map((item, index) => (
+          <div key={index} className={style.item}>
+            <div className={style.followAvatarContainer}>
+              <img
+                src={item.avatar}
+                alt={item.handle}
+                className={style.followAvatar}
+              />
+            </div>
+            <div className={style.profileDetails}>
+              <div className={style.name}>{item.name}</div>
+              <div className={style.handle}>{item.handle}</div>
+            </div>
+            <div className={style.followButton}>Follow</div>
+          </div>
+        ))}
+        <div className={style.showMore}>Show more</div>
+      </div>
     </div>
   )
 }
-
 
 export default Widget

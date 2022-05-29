@@ -42,36 +42,36 @@ const InitialState = ({
       <div className={style.inputFieldsContainer}>
         <div className={style.inputContainer}>
           <label
-            htmlFor='image-upload'
+            htmlFor="image-upload"
             className={profileImage ? style.fileSelected : style.customInput}
           >
             <input
-              type='file'
-              id='image-upload'
-              accept='.jpg, .jpeg, .png'
+              type="file"
+              id="image-upload"
+              accept=".jpg, .jpeg, .png"
               className={style.fileInput}
-              placeholder='Image URL'
-            //   onChange={e => setProfileImage(e.target.files![0])}
+              placeholder="Image URL"
+              //   onChange={e => setProfileImage(e.target.files![0])}
             />
             Select File
           </label>
         </div>
         <div className={style.inputContainer}>
           <input
-            type='text'
+            type="text"
             className={style.input}
-            placeholder='Title of Image'
+            placeholder="Title of Image"
             value={name}
-            onChange={e => setName(e.target.value)}
+            onChange={(e) => setName(e.target.value)}
           />
         </div>
         <div className={style.inputContainer}>
           <input
-            type='text'
+            type="text"
             className={style.input}
-            placeholder='Description'
+            placeholder="Description"
             value={description}
-            onChange={e => setDescription(e.target.value)}
+            onChange={(e) => setDescription(e.target.value)}
           />
         </div>
       </div>
